@@ -1,8 +1,11 @@
+const CheckpointModel = require('../models/checkpoint-model');
+
 /**
  * listAllCheckpoints
  */
-function listAllCheckpoints() {
-
+async function listAllCheckpoints() {
+    const all = await CheckpointModel.findAll();
+    return all;
 }
 
 /**

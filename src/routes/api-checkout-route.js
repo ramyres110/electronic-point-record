@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-    res.json("ok");
+const CheckpointController = require('../controllers/checkpoint-control');
+
+router.get('/', async (req, res, next) => {
+    const all = await CheckpointController.listAllCheckpoints();
+    res.json(all);
 });
 
 router.get('/:name', (req, res, next) => {

@@ -6,9 +6,6 @@ const { normalizePort } = require('../src/utils/serverUtils');
 
 require('dotenv').config();
 
-
-require('../src/utils/modelUtils').migration(true);
-
 /**
  * Server Event Error
  * @param {*} error 

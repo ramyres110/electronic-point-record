@@ -4,7 +4,7 @@ const router = express.Router();
 const sequelize = require('../configs/sequelize-config');
 
 /** /checkout */
-router.use('/checkout', require('./api-checkout-route'));
+router.use('/checkpoint', require('./api-checkpoint-route'));
 
 /* GET home page. */
 router.get('/', async function (req, res) {

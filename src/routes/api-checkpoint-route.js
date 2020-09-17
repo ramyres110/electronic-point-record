@@ -12,9 +12,9 @@ router.get('/:name', (req, res, next) => {
     res.json("ok");
 });
 
-router.post('/', (req, res, next) => {
-    res.json("ok");
-
+router.post('/', async (req, res, next) => {
+    const resp = await CheckpointController.saveCheckpoint();
+    res.json(resp);
 })
 
 router.put('/', (req, res, next) => {

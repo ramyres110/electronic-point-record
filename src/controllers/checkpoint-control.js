@@ -20,8 +20,8 @@ function listCheckpointByUser(usename) {
  * saveCheckpoint
  * @param object checkpoint 
  */
-function saveCheckpoint(checkpoint) {
-
+async function saveCheckpoint(checkpoint) {
+    return await CheckpointModel.create({ name: "ramyres" });
 }
 
 /**

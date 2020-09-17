@@ -4,6 +4,8 @@ const debug = require('debug')('electronic-point-record:server');
 const http = require('http');
 const { normalizePort } = require('../src/utils/serverUtils');
 
+require('dotenv').config();
+
 /**
  * Server Event Error
  * @param {*} error 

@@ -7,7 +7,7 @@ const helmet = require('helmet');
 const compression = require('compression');
 const cors = require('cors');
 
-require('./utils/modelUtils').migration(true);
+require('./utils/modelUtils').migration();
 
 const { logErrors, clientErrorHandler, errorHandler } = require('./utils/errorUtils');
 

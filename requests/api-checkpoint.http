@@ -1,0 +1,37 @@
+@protocol = http
+@hostname = localhost
+@port = 3000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+@name = teste2
+
+### GET ALL
+GET {{protocol}}://{{host}}/api/v1/checkpoint HTTP/1.1
+
+
+### GET BY NAME
+GET {{protocol}}://{{host}}/api/v1/checkpoint/{{name}} HTTP/1.1
+
+
+### SAVE
+POST {{protocol}}://{{host}}/api/v1/checkpoint HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "name": "{{name}}"
+}
+
+### DELETE
+DELETE {{protocol}}://{{host}}/api/v1/checkpoint/47 HTTP/1.1
+
+
+### UPDATE
+PUT {{protocol}}://{{host}}/api/v1/checkpoint/48 HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "name": "{{name}}",
+    "type": "I"
+}
+

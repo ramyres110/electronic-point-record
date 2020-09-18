@@ -1,5 +1,10 @@
 const chai = require('chai');
-const should = chai.should();
+const chaiAsPromised = require('chai-as-promised');
+
+chai.use(chaiAsPromised);
+chai.should();
+
+require('../src/utils/modelUtils').migration(false);
 
 const { saveCheckpoint, listAllCheckpoints, listCheckpointByUser, changeCheckpoint, deleteCheckpoint } = require('../src/controllers/checkpoint-control');
 
@@ -17,14 +22,17 @@ describe("Testing Checkpoint Controller", () => {
         it("saveCheckpoint should be Ok", () => {
             saveCheckpoint.should.be.ok;
         });
+        it("saveCheckpoint with params should be fulfilled", () => {
+            saveCheckpoint('ramyres').should.be.fulfilled;
+        });
     });
-    
+
     context("Testing Change", () => {
         it("changeCheckpoint should be Ok", () => {
             changeCheckpoint.should.be.ok;
         });
     });
-    
+
     context("Testing Delete", () => {
         it("deleteCheckpoint should be Ok", () => {
             deleteCheckpoint.should.be.ok;

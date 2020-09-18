@@ -6,6 +6,10 @@ const CheckpointModel = sequelize.define('checkpoint',
         name: {
             type: DataTypes.STRING(150),
             allowNull: false
+        },
+        type: {
+            type: DataTypes.CHAR,
+            allowNull: false
         }
     },
     {

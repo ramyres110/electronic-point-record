@@ -12,8 +12,9 @@ function Home() {
     evt.preventDefault();
 
     if (!name.trim()) {
-      swal("Atenção", "Informe seu nome para registro do ponto!", "warning");
+      return swal("Atenção", "Informe seu nome para registro do ponto!", "warning");
     }
+
     CheckpointController.save(name)
       .then(ret => {
         swal("Sucesso", "Ponto Registrado!", "success");
@@ -38,7 +39,7 @@ function Home() {
                 <h5 className="card-title">Registrar</h5>
 
                 <form onSubmit={register}>
-                  <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="form-control mb-3" aria-label="" autoFocus placeholder="Informe seu nome"/>
+                  <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="form-control mb-3" aria-label="" autoFocus placeholder="Informe seu nome" />
                   <button type="submit" className="btn btn-outline-primary float-right btn-lg">Registrar</button>
                 </form>
 

@@ -35,3 +35,5 @@ Content-Type: {{contentType}}
     "type": "I"
 }
 
+### Production
+GET https://shrouded-falls-04097.herokuapp.com/api/v1/checkpoint HTTP/1.1

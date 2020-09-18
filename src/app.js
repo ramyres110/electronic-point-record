@@ -28,7 +28,7 @@ const publicFolderPath = path.join(__dirname + '/..', 'public');
 app.use(express.static(publicFolderPath));
 app.use('/checkpoint', express.static(publicFolderPath));
 
-app.use('/api/v1/', cors(), api);
+app.use('/api/v1', cors(), api);
 
 app.use(logErrors);
 app.use(clientErrorHandler);

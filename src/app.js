@@ -16,7 +16,9 @@ const api = require('./routes/api-route');
 const app = express();
 
 app.use(logger('common'));
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: false,//Check Security Issues
+}));
 app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -24,6 +26,7 @@ app.use(cookieParser());
 
 const publicFolderPath = path.join(__dirname + '/..', 'public');
 app.use(express.static(publicFolderPath));
+app.use('/checkpoint', express.static(publicFolderPath));
 
 app.use('/api/v1/', cors(), api);
 

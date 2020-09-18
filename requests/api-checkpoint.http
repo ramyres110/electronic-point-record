@@ -1,3 +1,4 @@
+// Plugin https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 @protocol = http
 @hostname = localhost
 @port = 3000
